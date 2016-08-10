@@ -42,7 +42,7 @@ def rotate(turt, draw_func, size, rot_num):
 		draw_func(turt, size)
 		turt.left(10)
 		
-def draw():
+def draw(draw_func, size, color, speed, x_pos, y_pos, num_rotate):
 	"""
 	Draws a geometric shape.
 	"""
@@ -56,30 +56,12 @@ def draw():
 	frame.setup(WIDTH, HEIGHT)
 	frame.bgcolor("grey")
 
-	# # square turtle
-	# square = turtle.Turtle()
-	# square.color("white", "white")
-	# square.speed(SPEED)
-	# square.fill(True)
-	# square.setposition(0, 0)
-	# rotate(square, draw_square, 100, 36)
+	shape = turtle.Turtle()
+	shape.color(color, color)
+	shape.speed(SPEED)
+	shape.setposition(x_pos, y_pos)
+	rotate(shape, draw_func, size, num_rotate)
 
-	# # triangle turtle
-	# triangle = turtle.Turtle()
-	# triangle.color("white", "white")
-	# triangle.speed(SPEED)
-	# triangle.setposition(0, 0)
-	# rotate(triangle, draw_triangle, 100, 36)
-
-	# circle turtle
-	circle = turtle.Turtle()
-	circle.color("white", "white")
-	circle.speed(SPEED)
-	circle.fill(True)
-	circle.setposition(0, 0)
-	rotate(circle, draw_circle, 100, 36)
-
-	# square.fill(False)	
 	frame.exitonclick()
 
-draw()
+draw(draw_square, 100, "white", 10, 0, 0, 36)
